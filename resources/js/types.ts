@@ -56,7 +56,7 @@ export interface ThaanaConfig {
   enabled?: boolean
   /** Start in Thaana mode. `null` follows the locale (on for `dv`). */
   default_on?: boolean | null
-  keymap?: "phonetic" | "typewriter"
+  keymap?: "phonetic" | "phonetic-hh" | "typewriter"
   shortcut?: string | false
 }
 

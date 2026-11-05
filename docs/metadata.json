@@ -1,0 +1,5 @@
+{
+    "name": "Block Editor",
+    "description": "A block editor for Laravel powered by TipTap: blocks defined by PHP classes and JS modules, multi-column layouts, Thaana typing, JSON storage with per-block validation and sanitizing, and Blade and Inertia React fields",
+    "version": "1"
+}

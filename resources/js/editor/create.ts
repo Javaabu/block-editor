@@ -133,6 +133,10 @@ export function createBlockEditor(target: HTMLElement, options: BlockEditorOptio
           link.open(null)
           return true
         },
+        // Logical alignment (TextAlign's own shortcuts are left/right).
+        "Mod-Shift-l": ({ editor: e }) => e.commands.setTextAlign("start"),
+        "Mod-Shift-e": ({ editor: e }) => e.commands.setTextAlign("center"),
+        "Mod-Shift-r": ({ editor: e }) => e.commands.setTextAlign("end"),
         "Alt-F10": () => {
           toolbar?.focus()
           return !!toolbar

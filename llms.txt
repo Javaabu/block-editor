@@ -1,0 +1,43 @@
+# javaabu/block-editor
+
+> A block editor for Laravel powered by TipTap. Blocks have a PHP class (attributes, validation, Blade rendering) and optionally a JS module (TipTap extension, React renderer); apps and packages register their own. Content is stored as TipTap JSON, cast to a Document, validated per block with the BlockContent rule, sanitized on save and on render, and rendered with Blade (<x-block-editor::content>) or React (<BlockContent>). The editor field ships for Blade (<x-block-editor::editor>), @javaabu/forms (BlockEditorField) and javaabu/stencil (BlockEditorField::make()). Multi-column layouts, phonetic (JTK) Thaana typing, RTL-aware rendering, English and Dhivehi.
+
+Paths are relative to this file. In a project, that's vendor/javaabu/block-editor/.
+
+## Rules
+
+- Store content in a json column cast with `AsBlockDocument::class` (or `AsBlockDocument::class . ':profile'`). Reading gives a `Javaabu\BlockEditor\Document` (empty, never null); setting accepts the editor's JSON string, an array or a Document and sanitizes it.
+- Validate with `['required', BlockContent::make($profile)->required()]`. Laravel's `required` alone passes an empty editor. Don't write your own JSON validation.
+- Render with `<x-block-editor::content :content="$post->body" />` or `{{ $post->body }}` in Blade, and `<BlockContent content={post.body} />` from `@javaabu/block-editor/react` in React. Never `{!! !!}` the JSON or hand-render nodes.
+- Edit with `<x-block-editor::editor name="body" :model="$post" />` in Blade, `<BlockEditorField name="body" config={editor} />` in React (pass `BlockEditor::editorConfig()` from the controller), or `BlockEditorField::make('body')` in a stencil form.
+- Use the same profile for the cast, the rule, the field and the renderer when a field offers fewer blocks (`BlockEditor::profile('comment', [...blocks], [...marks])`).
+- A new block is a class extending `Javaabu\BlockEditor\Blocks\Block` (`$name`, `$content`, `attributes()` with `Attribute::…`, a Blade view), registered with `BlockEditor::register()`. A JS module (`defineBlock` + `registerBlock` from `@javaabu/block-editor`, registered as a manifest script in `$script`) is only needed for a custom editor look or a React renderer.
+- Replace a core block by registering one with the same name. Remove one with `BlockEditor::forget()`.
+- Pass every block title, description, attribute label and option label through `__()`. Mark attributes that take Dhivehi with `->thaana()`.
+
+## Docs
+
+- [Introduction](docs/intro.md): what the package does
+- [Requirements](docs/requirements.md): PHP, Laravel, forms, manifest, stencil and npm dependencies
+- [Installation & Setup](docs/installation-and-setup.md): installing, the editor's assets through manifest, Inertia React, publishing
+- [AI assistants](docs/ai-assistants.md): Laravel Boost and these docs
+- [Storing content](docs/basic-usage/storing-content.md): the column, the AsBlockDocument cast, the Document and Node API, text and excerpts
+- [The editor field](docs/basic-usage/editor-field.md): <x-block-editor::editor>, BlockEditorField (React), the stencil field, every option, errors, useForm
+- [Validation](docs/basic-usage/validation.md): the BlockContent rule, required and maxBlocks, where errors go, what's checked
+- [Rendering content](docs/basic-usage/rendering.md): <x-block-editor::content>, echoing a Document, BlockContent in React, the stylesheet
+- [Core blocks](docs/basic-usage/blocks.md): every block and mark with its attributes and markup, heading levels, images, video providers
+- [Columns](docs/basic-usage/columns.md): layouts, stacking, gaps, markup, RTL
+- [Thaana and RTL](docs/basic-usage/thaana-and-rtl.md): Thaana typing, its settings, direction of mixed content, the Dhivehi interface
+- [Using the editor](docs/basic-usage/using-the-editor.md): the menus, handle, shortcuts and accessibility
+- [Configuration](docs/advanced-usage/configuration.md): every config option and the API for providers
+- [Profiles](docs/advanced-usage/profiles.md): named sets of blocks and marks, and using them everywhere
+- [Custom blocks](docs/advanced-usage/custom-blocks.md): the PHP class, attributes, the view, PHP-only blocks, the JS module, child blocks, replacing core blocks, marks, testing
+- [Sanitizing](docs/advanced-usage/sanitizing.md): what's cleaned, the HTML block and its config, turning it off on save
+- [JSON formats](docs/advanced-usage/json-format.md): the content JSON and the editor config
+- [JavaScript API](docs/advanced-usage/javascript-api.md): createBlockEditor, the Blade entry, the block registry, helpers, React components
+- [Styling and views](docs/advanced-usage/styling-and-views.md): CSS variables, Blade views, overriding files
+- [Translations](docs/advanced-usage/translations.md): the language files, publishing, and Dhivehi terms to review
+- [Questions and Security](docs/questions-and-security.md): support and reporting vulnerabilities
+- [Changelog](docs/changelog.md): release notes
+- [About Us](docs/about-us.md): Javaabu
+- [Contributing to the docs](docs/contributing-to-docs.md): how the docs are built

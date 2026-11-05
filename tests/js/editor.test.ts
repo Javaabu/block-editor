@@ -248,3 +248,18 @@ describe("createBlockEditor", () => {
     expect(editor.state.selection).toBeInstanceOf(TextSelection)
   })
 })
+
+describe("shortcuts", () => {
+  it("aligns with logical start, center and end", () => {
+    const { editor } = mount({
+      content: { type: "doc", content: [{ type: "paragraph", content: [{ type: "text", text: "x" }] }] },
+    })
+    editor.commands.setTextSelection(1)
+    editor.commands.keyboardShortcut("Mod-Shift-e")
+    expect(editor.getJSON().content![0]!.attrs!.textAlign).toBe("center")
+    editor.commands.keyboardShortcut("Mod-Shift-r")
+    expect(editor.getJSON().content![0]!.attrs!.textAlign).toBe("end")
+    editor.commands.keyboardShortcut("Mod-Shift-l")
+    expect(editor.getJSON().content![0]!.attrs!.textAlign).toBe("start")
+  })
+})

@@ -1,0 +1,11 @@
+{
+    "position": 1.32,
+    "label": "Advanced Usage",
+    "collapsible": true,
+    "collapsed": true,
+    "link": {
+        "type": "generated-index",
+        "slug": "/block-editor/_categories/advanced-usage",
+        "description": "Configuration, profiles, custom blocks, sanitizing, the JSON formats, the JavaScript API, styling and views, and translations."
+    }
+}

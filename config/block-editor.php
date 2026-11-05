@@ -90,7 +90,7 @@ return [
     |
     | Phonetic (JTK) Thaana typing from a Latin keyboard, toggled from the
     | toolbar or with the shortcut. "default_on" null turns it on when the app
-    | locale is dv. Keymaps: phonetic (JTK), typewriter.
+    | locale is dv. Keymaps: phonetic (JTK), phonetic-hh, typewriter.
     |
     */
 

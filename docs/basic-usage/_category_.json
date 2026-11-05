@@ -1,0 +1,11 @@
+{
+    "position": 1.3,
+    "label": "Basic Usage",
+    "collapsible": true,
+    "collapsed": false,
+    "link": {
+        "type": "generated-index",
+        "slug": "/block-editor/_categories/basic-usage",
+        "description": "Storing content, the editor field in Blade, React and stencil, validation, rendering, the core blocks, columns, Thaana and RTL."
+    }
+}
