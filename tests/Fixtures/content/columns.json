@@ -1,0 +1,90 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "columns",
+      "attrs": {
+        "layout": "2-1",
+        "stackAt": "sm"
+      },
+      "content": [
+        {
+          "type": "column",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": {
+                "level": 2
+              },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Left"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Main column"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "column",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Side"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attrs": {
+        "layout": "1-1-1"
+      },
+      "content": [
+        {
+          "type": "column",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "a"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "column",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,12 +3,20 @@
 namespace Javaabu\BlockEditor;
 
 use Illuminate\Support\ServiceProvider;
+use Javaabu\BlockEditor\Rendering\Renderer;
+use Javaabu\BlockEditor\Sanitizing\HtmlSanitizer;
+use Javaabu\BlockEditor\Sanitizing\Sanitizer;
 
 class BlockEditorServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/block-editor.php', 'block-editor');
+
+        $this->app->singleton(BlockEditorManager::class);
+        $this->app->singleton(HtmlSanitizer::class);
+        $this->app->singleton(Sanitizer::class);
+        $this->app->singleton(Renderer::class);
     }
 
     public function boot(): void

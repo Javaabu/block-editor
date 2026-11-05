@@ -1,0 +1,42 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "image",
+      "attrs": {
+        "src": "https://example.com/a.png",
+        "alt": "A photo",
+        "caption": "ފޮޓޯގެ ކެޕްޝަން"
+      }
+    },
+    {
+      "type": "image",
+      "attrs": {
+        "src": "https://example.com/b.png"
+      }
+    },
+    {
+      "type": "horizontalRule"
+    },
+    {
+      "type": "embed",
+      "attrs": {
+        "src": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        "title": "A video"
+      }
+    },
+    {
+      "type": "embed",
+      "attrs": {
+        "src": "https://vimeo.com/76979871"
+      }
+    },
+    {
+      "type": "embed",
+      "attrs": {
+        "src": "https://example.com/page",
+        "title": "Example"
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "doc",
+  "content": [
+    {
+      "type": "button",
+      "attrs": {
+        "text": "Read more",
+        "url": "https://javaabu.com"
+      }
+    },
+    {
+      "type": "button",
+      "attrs": {
+        "text": "ގިނައިން",
+        "url": "/dv",
+        "variant": "outline",
+        "newTab": true,
+        "align": "center"
+      }
+    },
+    {
+      "type": "html",
+      "attrs": {
+        "html": "<p class=\"lead\">Hi <strong>there</strong></p>"
+      }
+    }
+  ]
+}
