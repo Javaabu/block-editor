@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 
 /**
- * Renders tests/fixtures/content/*.json with the Blade views and compares them to
+ * Renders tests/Fixtures/content/*.json with the Blade views and compares them to
  * the .html next to them. The React renderer is tested against the same files
  * (tests/js/fixtures.test.tsx), so both stacks render the same markup.
  *
@@ -22,7 +22,7 @@ class RenderingFixturesTest extends TestCase
     {
         $fixtures = [];
 
-        foreach (glob(dirname(__DIR__) . '/fixtures/content/*.json') as $path) {
+        foreach (glob(dirname(__DIR__) . '/Fixtures/content/*.json') as $path) {
             $fixtures[basename($path, '.json')] = [$path];
         }
 

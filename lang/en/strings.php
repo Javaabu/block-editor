@@ -84,8 +84,6 @@ return [
         'lg' => 'Large',
     ],
 
-    'embedded_content' => 'Embedded content',
-
     'validation' => [
         'invalid' => 'The :attribute must be block editor content.',
         'summary' => 'Block :position (:block): :message',

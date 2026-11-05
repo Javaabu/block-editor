@@ -56,6 +56,10 @@ class CanonicalHtml
             $attributes[$attribute->name] = $attribute->value;
         }
 
+        if (isset($attributes['style'])) {
+            $attributes['style'] = static::style($attributes['style']);
+        }
+
         ksort($attributes);
 
         $html = "<{$tag}";
@@ -75,5 +79,24 @@ class CanonicalHtml
         }
 
         return "{$html}</{$tag}>";
+    }
+
+    /**
+     * `text-align:center;` and `text-align: center` are the same style.
+     */
+    protected static function style(string $style): string
+    {
+        $declarations = [];
+
+        foreach (explode(';', $style) as $declaration) {
+            if (! str_contains($declaration, ':')) {
+                continue;
+            }
+
+            [$property, $value] = explode(':', $declaration, 2);
+            $declarations[] = trim($property) . ': ' . trim($value);
+        }
+
+        return implode('; ', $declarations);
     }
 }

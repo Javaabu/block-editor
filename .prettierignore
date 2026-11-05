@@ -10,3 +10,5 @@ tests/js/fixtures
 composer.json
 composer.lock
 docs/**/*.json
+tests/Fixtures/content
+resources/js/generated

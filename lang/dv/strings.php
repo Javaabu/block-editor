@@ -84,8 +84,6 @@ return [
         'lg' => 'ބޮޑު',
     ],
 
-    'embedded_content' => 'އެމްބެޑްކޮށްފައިވާ ކޮންޓެންޓް',
-
     'validation' => [
         'invalid' => ':attribute އަކީ ބްލޮކް އެޑިޓަރުގެ ކޮންޓެންޓަކަށް ވާން ޖެހޭ.',
         'summary' => 'ބްލޮކް :position (:block): :message',

@@ -346,6 +346,10 @@ class Attribute
      */
     public function toEditor(string $name): array
     {
+        if (! $this->is_editable) {
+            return ['type' => $this->type, 'default' => $this->getDefault(), 'editable' => false];
+        }
+
         return array_filter([
             'type' => $this->type,
             'default' => $this->getDefault(),

@@ -20,12 +20,12 @@ class ValidationTest extends TestCase
     #[Test]
     public function it_passes_valid_content_in_thaana_and_english(): void
     {
-        $content = json_decode(file_get_contents(dirname(__DIR__) . '/fixtures/content/mixed-direction.json'), true);
+        $content = json_decode(file_get_contents(dirname(__DIR__) . '/Fixtures/content/mixed-direction.json'), true);
 
         $this->assertEquals([], $this->errors($content));
         $this->assertEquals([], $this->errors(json_encode($content)));
 
-        foreach (glob(dirname(__DIR__) . '/fixtures/content/*.json') as $fixture) {
+        foreach (glob(dirname(__DIR__) . '/Fixtures/content/*.json') as $fixture) {
             $this->assertEquals([], $this->errors(file_get_contents($fixture)), basename($fixture));
         }
     }

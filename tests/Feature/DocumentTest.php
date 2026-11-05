@@ -93,7 +93,7 @@ class DocumentTest extends TestCase
     #[Test]
     public function it_converts_to_text_and_excerpts(): void
     {
-        $document = Document::make(file_get_contents(dirname(__DIR__) . '/fixtures/content/lists.json'));
+        $document = Document::make(file_get_contents(dirname(__DIR__) . '/Fixtures/content/lists.json'));
 
         $this->assertEquals("One\n\nTwo\n\nNested\n\nThree\n\nFour\n\nދިވެހި ލިސްޓު\n\nEnglish", $document->toText());
         $this->assertEquals('One Two…', $document->excerpt(7));

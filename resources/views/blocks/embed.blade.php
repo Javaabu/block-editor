@@ -1,5 +1,5 @@
 @php($url = $block->embedUrl($attrs['src'] ?? null))
-@php($title = ($attrs['title'] ?? null) ?: __('block-editor::strings.embedded_content'))
+@php($title = ($attrs['title'] ?? null) ?: __('block-editor::editor.embeddedContent'))
 @if($url)
     <figure class="block-embed">
         <iframe{!! $renderer->attributes([

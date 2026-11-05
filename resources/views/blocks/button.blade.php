@@ -1,3 +1,4 @@
+@if(($attrs['text'] ?? null) && ($attrs['url'] ?? null))
 <div class="block-button" data-align="{{ $attrs['align'] ?? 'start' }}">
     <a{!! $renderer->attributes([
         'href' => $attrs['url'],
@@ -8,3 +9,4 @@
         'dir' => 'auto',
     ]) !!}>{{ $attrs['text'] }}</a>
 </div>
+@endif

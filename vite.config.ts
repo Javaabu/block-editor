@@ -20,6 +20,15 @@ export default defineConfig({
     target: "es2020",
     sourcemap: false,
     reportCompressedSize: false,
-    rollupOptions: { input: entries },
+    // TipTap and ProseMirror are most of the editor (about 170 kB gzipped).
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      input: entries,
+      onwarn(warning, warn) {
+        // Onu's "use client" directives mean nothing in a browser bundle.
+        if (warning.code === "MODULE_LEVEL_DIRECTIVE") return
+        warn(warning)
+      },
+    },
   },
 })

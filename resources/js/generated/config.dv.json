@@ -1,0 +1,882 @@
+{
+    "version": 1,
+    "profile": "default",
+    "locale": "dv",
+    "blocks": [
+        {
+            "name": "paragraph",
+            "title": "ލިޔުން",
+            "description": "ސާދާ ޕެރެގްރާފެއް",
+            "group": "block",
+            "content": "inline*",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "pilcrow",
+            "keywords": [
+                "text",
+                "p"
+            ],
+            "attributes": {
+                "textAlign": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "heading",
+            "title": "ސުރުޚީ",
+            "description": "ބައެއްގެ ސުރުޚީ",
+            "group": "block",
+            "content": "inline*",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "heading",
+            "keywords": [
+                "title",
+                "h1",
+                "h2",
+                "h3",
+                "h4"
+            ],
+            "attributes": {
+                "level": {
+                    "type": "enum",
+                    "default": 1,
+                    "editable": false
+                },
+                "textAlign": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "bulletList",
+            "title": "ބުލެޓް ލިސްޓު",
+            "description": "ބުލެޓް ޖަހާފައިވާ ލިސްޓެއް",
+            "group": "block",
+            "content": "listItem+",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "list",
+            "keywords": [
+                "bullet",
+                "list",
+                "ul",
+                "unordered"
+            ],
+            "attributes": {
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "orderedList",
+            "title": "ނަންބަރު ލިސްޓު",
+            "description": "ނަންބަރު ޖަހާފައިވާ ލިސްޓެއް",
+            "group": "block",
+            "content": "listItem+",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "list-ordered",
+            "keywords": [
+                "numbered",
+                "ordered",
+                "list",
+                "ol"
+            ],
+            "attributes": {
+                "start": {
+                    "type": "integer",
+                    "default": 1,
+                    "editable": true,
+                    "input": "number",
+                    "label": "ފަށާ ނަންބަރު",
+                    "required": false,
+                    "thaana": false,
+                    "min": 0
+                },
+                "type": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "listItem",
+            "title": "ލިސްޓުގެ އައިޓަމް",
+            "description": "",
+            "group": "",
+            "content": "paragraph block*",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {}
+        },
+        {
+            "name": "blockquote",
+            "title": "ޤައުލު",
+            "description": "ނަގާފައިވާ ޤައުލެއް",
+            "group": "block",
+            "content": "block+",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "quote",
+            "keywords": [
+                "quote",
+                "citation"
+            ],
+            "attributes": {
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "callout",
+            "title": "ނޯޓް",
+            "description": "ފާހަގަކޮށްލާ ނޯޓެއް",
+            "group": "block",
+            "content": "inline*",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "info",
+            "keywords": [
+                "note",
+                "notice",
+                "alert",
+                "warning",
+                "tip"
+            ],
+            "attributes": {
+                "variant": {
+                    "type": "enum",
+                    "default": "info",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ސްޓައިލް",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "info",
+                            "label": "މަޢުލޫމާތު"
+                        },
+                        {
+                            "value": "success",
+                            "label": "ކާމިޔާބު"
+                        },
+                        {
+                            "value": "warning",
+                            "label": "އިންޒާރު"
+                        },
+                        {
+                            "value": "error",
+                            "label": "ކުށް"
+                        }
+                    ]
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "codeBlock",
+            "title": "ކޯޑް",
+            "description": "ކޯޑުގެ ބައެއް",
+            "group": "block",
+            "content": "text*",
+            "marks": [],
+            "insertable": true,
+            "category": "text",
+            "icon": "code",
+            "keywords": [
+                "code",
+                "snippet",
+                "pre"
+            ],
+            "attributes": {
+                "language": {
+                    "type": "string",
+                    "default": null,
+                    "editable": true,
+                    "input": "text",
+                    "label": "ކޯޑުގެ ބަސް",
+                    "required": false,
+                    "thaana": false,
+                    "max": 32
+                }
+            }
+        },
+        {
+            "name": "table",
+            "title": "ޓޭބަލް",
+            "description": "ރޯތަކާއި ކޮލަމްތައް",
+            "group": "block",
+            "content": "tableRow+",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "table",
+            "keywords": [
+                "grid",
+                "rows",
+                "columns",
+                "spreadsheet"
+            ],
+            "attributes": {
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "tableRow",
+            "title": "ޓޭބަލްގެ ރޯ",
+            "description": "",
+            "group": "",
+            "content": "(tableCell | tableHeader)*",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {}
+        },
+        {
+            "name": "tableHeader",
+            "title": "ޓޭބަލްގެ ސުރުޚީގެ ސެލް",
+            "description": "",
+            "group": "",
+            "content": "block+",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {
+                "colspan": {
+                    "type": "integer",
+                    "default": 1,
+                    "editable": false
+                },
+                "rowspan": {
+                    "type": "integer",
+                    "default": 1,
+                    "editable": false
+                },
+                "colwidth": {
+                    "type": "json",
+                    "default": null,
+                    "editable": false
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "tableCell",
+            "title": "ޓޭބަލްގެ ސެލް",
+            "description": "",
+            "group": "",
+            "content": "block+",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {
+                "colspan": {
+                    "type": "integer",
+                    "default": 1,
+                    "editable": false
+                },
+                "rowspan": {
+                    "type": "integer",
+                    "default": 1,
+                    "editable": false
+                },
+                "colwidth": {
+                    "type": "json",
+                    "default": null,
+                    "editable": false
+                },
+                "dir": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": false
+                }
+            }
+        },
+        {
+            "name": "horizontalRule",
+            "title": "ވަކިކުރާ ރޮނގު",
+            "description": "ބައިތައް ވަކިކުރާ ރޮނގެއް",
+            "group": "block",
+            "content": "",
+            "marks": null,
+            "insertable": true,
+            "category": "text",
+            "icon": "minus",
+            "keywords": [
+                "divider",
+                "separator",
+                "rule",
+                "hr",
+                "line"
+            ],
+            "attributes": {}
+        },
+        {
+            "name": "image",
+            "title": "ފޮޓޯ",
+            "description": "ލިންކަކުން ފޮޓޯއެއް",
+            "group": "block",
+            "content": "",
+            "marks": null,
+            "insertable": true,
+            "category": "media",
+            "icon": "image",
+            "keywords": [
+                "photo",
+                "picture",
+                "img",
+                "figure"
+            ],
+            "attributes": {
+                "src": {
+                    "type": "url",
+                    "default": null,
+                    "editable": true,
+                    "input": "url",
+                    "label": "ލިންކް",
+                    "required": true,
+                    "thaana": false
+                },
+                "alt": {
+                    "type": "string",
+                    "default": null,
+                    "editable": true,
+                    "input": "text",
+                    "label": "ފޮޓޯ ބަޔާންކުރާ ލިޔުން",
+                    "required": false,
+                    "thaana": true,
+                    "max": 255
+                },
+                "title": {
+                    "type": "string",
+                    "default": null,
+                    "editable": false
+                },
+                "caption": {
+                    "type": "string",
+                    "default": null,
+                    "editable": true,
+                    "input": "text",
+                    "label": "ކެޕްޝަން",
+                    "required": false,
+                    "thaana": true,
+                    "max": 500
+                }
+            }
+        },
+        {
+            "name": "embed",
+            "title": "ވީޑިއޯ",
+            "description": "ޔޫޓިއުބް ނުވަތަ ވިމިއޯ ވީޑިއޯއެއް",
+            "group": "block",
+            "content": "",
+            "marks": null,
+            "insertable": true,
+            "category": "embed",
+            "icon": "play",
+            "keywords": [
+                "video",
+                "youtube",
+                "vimeo",
+                "iframe"
+            ],
+            "attributes": {
+                "src": {
+                    "type": "url",
+                    "default": null,
+                    "editable": true,
+                    "input": "url",
+                    "label": "ލިންކް",
+                    "required": true,
+                    "thaana": false
+                },
+                "title": {
+                    "type": "string",
+                    "default": null,
+                    "editable": true,
+                    "input": "text",
+                    "label": "ސުރުޚީ",
+                    "required": false,
+                    "thaana": true,
+                    "max": 255
+                }
+            }
+        },
+        {
+            "name": "button",
+            "title": "ބަޓަން",
+            "description": "ލިންކެއް ހުޅުވާ ބަޓަނެއް",
+            "group": "block",
+            "content": "",
+            "marks": null,
+            "insertable": true,
+            "category": "advanced",
+            "icon": "mouse-pointer-click",
+            "keywords": [
+                "link",
+                "call to action",
+                "cta"
+            ],
+            "attributes": {
+                "text": {
+                    "type": "string",
+                    "default": null,
+                    "editable": true,
+                    "input": "text",
+                    "label": "ލިޔުން",
+                    "required": true,
+                    "thaana": true,
+                    "max": 100
+                },
+                "url": {
+                    "type": "url",
+                    "default": null,
+                    "editable": true,
+                    "input": "url",
+                    "label": "ލިންކް",
+                    "required": true,
+                    "thaana": false
+                },
+                "variant": {
+                    "type": "enum",
+                    "default": "primary",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ސްޓައިލް",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "primary",
+                            "label": "މައި"
+                        },
+                        {
+                            "value": "secondary",
+                            "label": "ދެވަނަ"
+                        },
+                        {
+                            "value": "outline",
+                            "label": "އައުޓްލައިން"
+                        }
+                    ]
+                },
+                "newTab": {
+                    "type": "boolean",
+                    "default": false,
+                    "editable": true,
+                    "input": "checkbox",
+                    "label": "އައު ޓެބެއްގައި ހުޅުވާ",
+                    "required": false,
+                    "thaana": false
+                },
+                "align": {
+                    "type": "enum",
+                    "default": "start",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ހުންނާނެ ފަރާތް",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "start",
+                            "label": "ފެށޭ ފަރާތް"
+                        },
+                        {
+                            "value": "center",
+                            "label": "މެދު"
+                        },
+                        {
+                            "value": "end",
+                            "label": "ނިމޭ ފަރާތް"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "columns",
+            "title": "ކޮލަމްތައް",
+            "description": "ބްލޮކްތައް ކައިރިކައިރީގައި",
+            "group": "block",
+            "content": "column{1,6}",
+            "marks": null,
+            "insertable": true,
+            "category": "layout",
+            "icon": "columns",
+            "keywords": [
+                "layout",
+                "grid",
+                "row",
+                "side by side"
+            ],
+            "attributes": {
+                "layout": {
+                    "type": "enum",
+                    "default": "1-1",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ލޭއައުޓް",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "1-1",
+                            "label": "50 / 50"
+                        },
+                        {
+                            "value": "1-2",
+                            "label": "33 / 67"
+                        },
+                        {
+                            "value": "2-1",
+                            "label": "67 / 33"
+                        },
+                        {
+                            "value": "1-1-1",
+                            "label": "33 / 33 / 33"
+                        },
+                        {
+                            "value": "1-2-1",
+                            "label": "25 / 50 / 25"
+                        },
+                        {
+                            "value": "2-1-1",
+                            "label": "50 / 25 / 25"
+                        },
+                        {
+                            "value": "1-1-2",
+                            "label": "25 / 25 / 50"
+                        },
+                        {
+                            "value": "1-1-1-1",
+                            "label": "25 / 25 / 25 / 25"
+                        }
+                    ]
+                },
+                "stackAt": {
+                    "type": "enum",
+                    "default": "md",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ކޮލަމްތައް ތިރިތިރިއަށް ބަހައްޓާނީ",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "sm",
+                            "label": "ފޯނުގައި"
+                        },
+                        {
+                            "value": "md",
+                            "label": "ޓެބްލެޓާއި ފޯނުގައި"
+                        },
+                        {
+                            "value": "lg",
+                            "label": "ޑެސްކްޓޮޕަށްވުރެ ކުޑަ ސްކްރީންގައި"
+                        },
+                        {
+                            "value": "never",
+                            "label": "ދުވަހަކުވެސް ނޫން"
+                        }
+                    ]
+                },
+                "gap": {
+                    "type": "enum",
+                    "default": "md",
+                    "editable": true,
+                    "input": "select",
+                    "label": "ދުރުމިން",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "ނެތް"
+                        },
+                        {
+                            "value": "sm",
+                            "label": "ކުޑަ"
+                        },
+                        {
+                            "value": "md",
+                            "label": "މެދުމިން"
+                        },
+                        {
+                            "value": "lg",
+                            "label": "ބޮޑު"
+                        }
+                    ]
+                },
+                "verticalAlign": {
+                    "type": "enum",
+                    "default": "stretch",
+                    "editable": true,
+                    "input": "select",
+                    "label": "މަތިން ތިރިއަށް ހުންނާނެ ގޮތް",
+                    "required": true,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "stretch",
+                            "label": "ފުރިހަމައަށް"
+                        },
+                        {
+                            "value": "start",
+                            "label": "ފެށޭ ފަރާތް"
+                        },
+                        {
+                            "value": "center",
+                            "label": "މެދު"
+                        },
+                        {
+                            "value": "end",
+                            "label": "ނިމޭ ފަރާތް"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "column",
+            "title": "ކޮލަމް",
+            "description": "",
+            "group": "",
+            "content": "block+",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {}
+        },
+        {
+            "name": "html",
+            "title": "HTML",
+            "description": "ސާފުކުރެވޭ HTML",
+            "group": "block",
+            "content": "",
+            "marks": null,
+            "insertable": true,
+            "category": "advanced",
+            "icon": "code-xml",
+            "keywords": [
+                "html",
+                "markup",
+                "raw",
+                "custom"
+            ],
+            "attributes": {
+                "html": {
+                    "type": "text",
+                    "default": null,
+                    "editable": true,
+                    "input": "code",
+                    "label": "HTML",
+                    "required": true,
+                    "thaana": false
+                }
+            }
+        },
+        {
+            "name": "hardBreak",
+            "title": "އައު ލައިން",
+            "description": "",
+            "group": "inline",
+            "content": "",
+            "marks": null,
+            "insertable": false,
+            "category": "text",
+            "icon": "square",
+            "keywords": [],
+            "attributes": {}
+        }
+    ],
+    "marks": [
+        {
+            "name": "bold",
+            "title": "ބޯލްޑް",
+            "attributes": {}
+        },
+        {
+            "name": "italic",
+            "title": "އިޓަލިކް",
+            "attributes": {}
+        },
+        {
+            "name": "underline",
+            "title": "ދަށުން ރޮނގު",
+            "attributes": {}
+        },
+        {
+            "name": "strike",
+            "title": "މެދުން ރޮނގު",
+            "attributes": {}
+        },
+        {
+            "name": "code",
+            "title": "ކޯޑް",
+            "attributes": {}
+        },
+        {
+            "name": "link",
+            "title": "ލިންކް",
+            "attributes": {
+                "href": {
+                    "type": "url",
+                    "default": null,
+                    "editable": true,
+                    "input": "url",
+                    "label": "ލިންކް",
+                    "required": true,
+                    "thaana": false
+                },
+                "target": {
+                    "type": "enum",
+                    "default": null,
+                    "editable": true,
+                    "input": "select",
+                    "label": "އައު ޓެބެއްގައި ހުޅުވާ",
+                    "required": false,
+                    "thaana": false,
+                    "options": [
+                        {
+                            "value": "_blank",
+                            "label": "އާއެކޭ"
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "strings": {
+        "label": "ކޮންޓެންޓް",
+        "placeholder": "ބްލޮކްތައް ބޭނުންނަމަ / ޖައްސަވާ",
+        "headingPlaceholder": "ސުރުޚީ :level",
+        "emptyBlockPlaceholder": "އެއްޗެއް ލިޔުއްވާ",
+        "toolbar": "ފޯމެޓިންގ",
+        "turnInto": "ބްލޮކްގެ ބާވަތް",
+        "bold": "ބޯލްޑް",
+        "italic": "އިޓަލިކް",
+        "underline": "ދަށުން ރޮނގު",
+        "strike": "މެދުން ރޮނގު",
+        "code": "ކޯޑް",
+        "link": "ލިންކް",
+        "alignStart": "ފެށޭ ފަރާތަށް",
+        "alignCenter": "މެދަށް",
+        "alignEnd": "ނިމޭ ފަރާތަށް",
+        "undo": "ފަހަތަށް",
+        "redo": "ކުރިއަށް",
+        "thaana": "ތާނައިން ލިޔުއްވާ",
+        "linkUrl": "ލިންކުގެ އެޑްރެސް",
+        "linkNewTab": "އައު ޓެބެއްގައި ހުޅުވާ",
+        "linkApply": "ބޭނުންކުރައްވާ",
+        "linkRemove": "ލިންކް ނައްތާލައްވާ",
+        "linkInvalid": "http(s)، mailto ނުވަތަ tel ލިންކެއް ބޭނުން ކުރައްވާ.",
+        "addBlock": "ބްލޮކެއް އިތުރުކުރައްވާ",
+        "searchBlocks": "ބްލޮކްތައް ހޯއްދަވާ",
+        "noBlocks": "ގުޅޭ ބްލޮކެއް ނުފެނުނު",
+        "blockActions": "ބްލޮކުގެ ޢަމަލުތައް (:block)",
+        "dragBlock": "ގެންދަން ދަމާލައްވާ، ނުވަތަ ޢަމަލުތަކަށް Enter ފިތާލައްވާ",
+        "settings": "ސެޓިންގްސް",
+        "moveUp": "މައްޗަށް",
+        "moveDown": "ތިރިއަށް",
+        "duplicate": "ކޮޕީއެއް ހައްދަވާ",
+        "delete": "ފޮހެލައްވާ",
+        "blockMoved": ":position ވަނަ ތަނަށް ގެންދެވިއްޖެ",
+        "blockDeleted": "ބްލޮކް ފޮހެލެވިއްޖެ",
+        "blockInserted": ":block އިތުރުކުރެވިއްޖެ",
+        "close": "ބަންދުކުރައްވާ",
+        "blockSettings": ":block ސެޓިންގްސް",
+        "categories": {
+            "text": "ލިޔުން",
+            "media": "މީޑިއާ",
+            "embed": "އެމްބެޑް",
+            "layout": "ލޭއައުޓް",
+            "advanced": "އިތުރު"
+        },
+        "headingLevel": "ސުރުޚީ :level",
+        "table": "ޓޭބަލް",
+        "addRowBefore": "މަތީގައި ރޯއެއް އިތުރުކުރައްވާ",
+        "addRowAfter": "ތިރީގައި ރޯއެއް އިތުރުކުރައްވާ",
+        "addColumnBefore": "ކުރީގައި ކޮލަމެއް އިތުރުކުރައްވާ",
+        "addColumnAfter": "ފަހުގައި ކޮލަމެއް އިތުރުކުރައްވާ",
+        "deleteRow": "ރޯ ފޮހެލައްވާ",
+        "deleteColumn": "ކޮލަމް ފޮހެލައްވާ",
+        "toggleHeaderRow": "ސުރުޚީގެ ރޯ",
+        "deleteTable": "ޓޭބަލް ފޮހެލައްވާ",
+        "column": "ކޮލަމް :number",
+        "imageEmpty": "ފޮޓޯގެ ލިންކް ސެޓިންގްސްގައި ލިޔުއްވާ",
+        "embedEmpty": "ވީޑިއޯގެ ލިންކް ސެޓިންގްސްގައި ލިޔުއްވާ",
+        "embedPreview": "ވީޑިއޯ: :url",
+        "buttonEmpty": "ބަޓަނުގެ ލިޔުމާއި ލިންކް ސެޓިންގްސްގައި ލިޔުއްވާ",
+        "htmlEmpty": "HTML ސެޓިންގްސްގައި ލިޔުއްވާ",
+        "genericEmpty": "މި ބްލޮކް ސެޓިންގްސްގައި ތައްޔާރުކުރައްވާ",
+        "editSettings": "ސެޓިންގްސް ބަދަލުކުރައްވާ",
+        "embeddedContent": "އެމްބެޑްކޮށްފައިވާ ކޮންޓެންޓް",
+        "errors": "މި ބްލޮކްގައި ކުށްތައް އެބަހުރި",
+        "required": ":field ލިޔުއްވުން ލާޒިމު."
+    },
+    "thaana": {
+        "enabled": true,
+        "default_on": null,
+        "keymap": "phonetic",
+        "shortcut": "Alt-Shift-t"
+    }
+}
