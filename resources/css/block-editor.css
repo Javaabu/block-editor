@@ -20,7 +20,8 @@
   --be-warning: var(--onu-warning, #d97706);
   --be-radius: var(--onu-radius, 0.375rem);
   --be-font-mono: var(--onu-font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
-  --be-font-thaana: var(--onu-font-thaana, Faruma, "MV Faseyha", "Noto Sans Thaana", sans-serif);
+  /* Latin first, then Thaana: mixed text keeps each script in its own font. */
+  --be-font: var(--onu-font-sans, ui-sans-serif, system-ui, Faruma, "MV Faseyha", "Noto Sans Thaana", sans-serif);
   --be-gap: 1rem;
 }
 
@@ -66,11 +67,6 @@
 
 .block-content li > p + * {
   margin-block-start: 0.25em;
-}
-
-.block-content :lang(dv),
-.block-content [dir="rtl"] {
-  font-family: var(--be-font-thaana);
 }
 
 .block-content blockquote {
@@ -278,6 +274,7 @@
 
 .be-editor {
   position: relative;
+  font-family: var(--be-font);
   border: 1px solid var(--be-border);
   border-radius: var(--be-radius);
   background: var(--be-background);
@@ -359,6 +356,11 @@
   color: var(--be-primary);
 }
 
+/* Icons with a direction point the other way in RTL. */
+[dir="rtl"] :where([data-action^="align"], [data-action="undo"], [data-action="redo"]) .be-icon {
+  transform: scaleX(-1);
+}
+
 .be-toolbar__button:disabled {
   opacity: 0.4;
   cursor: default;
@@ -407,11 +409,6 @@
 .be-editor[data-readonly] .be-content {
   padding-inline: 0;
   min-block-size: 0;
-}
-
-.be-content[lang="dv"],
-.be-editor[data-thaana] .be-content {
-  font-family: var(--be-font-thaana);
 }
 
 .be-content p.is-empty::before,
@@ -713,8 +710,9 @@
   font-family: var(--be-font-mono);
   font-size: 0.8rem;
 }
-.be-input[lang="dv"] {
-  font-family: var(--be-font-thaana);
+.be-editor [hidden],
+.be-popover [hidden] {
+  display: none !important;
 }
 .be-check {
   display: flex;

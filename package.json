@@ -18,7 +18,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "locales": "node scripts/locales.mjs",
-    "examples": "vite --config examples/vite.config.ts"
+    "examples": "vite --config examples/vite.config.ts",
+    "examples:build": "vite build --config examples/vite.config.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

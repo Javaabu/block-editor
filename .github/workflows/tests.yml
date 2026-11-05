@@ -131,6 +131,9 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
 
+      - name: Build the examples
+        run: pnpm examples:build
+
       - name: Check that the committed dist is up to date
         run: |
           pnpm build

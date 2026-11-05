@@ -124,3 +124,13 @@ describe("content", () => {
     expect(filterItems(items, " ").length).toBe(2)
   })
 })
+
+describe("menu ranking", () => {
+  it("puts title matches before keyword matches", () => {
+    const items = [
+      { id: "table", block: "table", title: "Table", icon: "x", keywords: ["columns"], category: "text" },
+      { id: "columns", block: "columns", title: "Columns", icon: "x", keywords: [], category: "layout" },
+    ]
+    expect(filterItems(items, "col").map((i) => i.id)).toEqual(["columns", "table"])
+  })
+})

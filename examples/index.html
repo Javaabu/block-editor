@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Block editor: Blade entry</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Blade entry</h1>
+        <p><a href="./react.html">React example</a> · <button type="button" id="direction">RTL / ދިވެހި</button></p>
+      </header>
+      <form id="form" method="post" action="#">
+        <!-- What <x-block-editor::editor name="body" /> renders (with data-config from PHP). -->
+        <div data-block-editor id="editor" data-input-id="body" data-label="Body" data-error-prefix="body">
+          <input type="hidden" name="body" data-block-editor-input />
+        </div>
+      </form>
+      <h2>Submitted JSON</h2>
+      <pre class="json" id="json" dir="ltr"></pre>
+    </main>
+    <script type="module" src="./blade.ts"></script>
+  </body>
+</html>

@@ -1,16 +1,26 @@
 import type { MenuItem, Translate } from "../../registry"
 import { h, icon, uid } from "./dom"
 
-/** Filters menu items by the query, against titles, descriptions and keywords. */
+/**
+ * Filters menu items by the query: titles that start with it first, then titles
+ * that contain it, then keyword and description matches. Order is kept within each.
+ */
 export function filterItems(items: MenuItem[], query: string): MenuItem[] {
   const q = query.trim().toLocaleLowerCase()
   if (!q) return items
-  return items.filter(
-    (item) =>
-      item.title.toLocaleLowerCase().includes(q) ||
-      (item.description ?? "").toLocaleLowerCase().includes(q) ||
-      item.keywords.some((keyword) => keyword.toLocaleLowerCase().startsWith(q)),
-  )
+  const score = (item: MenuItem) => {
+    const title = item.title.toLocaleLowerCase()
+    if (title.startsWith(q)) return 0
+    if (title.includes(q)) return 1
+    if (item.keywords.some((keyword) => keyword.toLocaleLowerCase().startsWith(q))) return 2
+    if ((item.description ?? "").toLocaleLowerCase().includes(q)) return 3
+    return -1
+  }
+  return items
+    .map((item) => ({ item, score: score(item) }))
+    .filter(({ score }) => score >= 0)
+    .sort((a, b) => a.score - b.score)
+    .map(({ item }) => item)
 }
 
 export interface BlockMenu {
