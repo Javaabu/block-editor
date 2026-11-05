@@ -1,0 +1,93 @@
+{
+  "name": "javaabu/block-editor",
+  "description": "A block editor for Laravel powered by TipTap: blocks defined by PHP classes (attributes, validation, Blade and React rendering) and JS modules, multi-column layouts, Thaana typing, JSON storage with per-block validation and sanitizing, and Blade and Inertia React fields.",
+  "homepage": "https://github.com/Javaabu/block-editor",
+  "license": "MIT",
+  "keywords": [
+    "javaabu",
+    "laravel",
+    "block-editor",
+    "tiptap",
+    "wysiwyg",
+    "editor",
+    "blade",
+    "inertia",
+    "react",
+    "dhivehi",
+    "thaana"
+  ],
+  "authors": [
+    {
+      "name": "Javaabu Pvt. Ltd.",
+      "email": "info@javaabu.com",
+      "homepage": "https://javaabu.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.4",
+    "illuminate/contracts": "^12.0 || ^13.0",
+    "illuminate/database": "^12.0 || ^13.0",
+    "illuminate/support": "^12.0 || ^13.0",
+    "illuminate/validation": "^12.0 || ^13.0",
+    "illuminate/view": "^12.0 || ^13.0",
+    "javaabu/forms": "^2.0@dev",
+    "javaabu/manifest": "^1.0@dev",
+    "javaabu/stencil": "^1.0@dev",
+    "symfony/html-sanitizer": "^7.2 || ^8.0"
+  },
+  "require-dev": {
+    "javaabu/boost-javaabu-guidelines": "^1.4",
+    "laravel/pint": "^1.24",
+    "orchestra/testbench": "^10.0 || ^11.0",
+    "phpunit/phpunit": "^11.5.3 || ^12.5.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Javaabu\\BlockEditor\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Javaabu\\BlockEditor\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-clover=clover.xml",
+    "lint": "vendor/bin/pint --test",
+    "format": "vendor/bin/pint"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    },
+    "laravel": {
+      "providers": [
+        "Javaabu\\BlockEditor\\BlockEditorServiceProvider"
+      ],
+      "aliases": {
+        "BlockEditor": "Javaabu\\BlockEditor\\Facades\\BlockEditor"
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/forms"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/manifest"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/Javaabu/stencil"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
