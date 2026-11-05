@@ -9,8 +9,9 @@ import { createPopover } from "./popover"
 export function createLinkPopover(editor: Editor, t: Translate, root: HTMLElement, rtl: () => boolean) {
   let trigger: HTMLElement | null = null
   const errorId = uid("be-link-error")
+  // Not type="url": relative links (/about, #top) are allowed.
   const url = h("input", {
-    type: "url",
+    type: "text",
     class: "be-input",
     dir: "ltr",
     inputmode: "url",

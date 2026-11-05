@@ -98,8 +98,9 @@ export function duplicateBlock(editor: Editor, ref: BlockRef) {
 export function deleteBlock(editor: Editor, ref: BlockRef) {
   const { schema } = editor.state
   const tr = editor.state.tr.delete(ref.pos, ref.pos + ref.node.nodeSize)
-  // Containers need a block to type in.
-  if (ref.parent.childCount === 1) tr.insert(ref.pos, schema.nodes.paragraph!.create())
+  // Containers need a block to type in (ProseMirror may already have filled one in).
+  const container = ref.parentPos < 0 ? tr.doc : tr.doc.nodeAt(tr.mapping.map(ref.parentPos))
+  if (container && container.childCount === 0) tr.insert(ref.pos, schema.nodes.paragraph!.create())
   tr.setSelection(TextSelection.near(tr.doc.resolve(Math.min(ref.pos + 1, tr.doc.content.size))))
   editor.view.dispatch(tr.scrollIntoView())
 }

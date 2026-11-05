@@ -347,7 +347,12 @@ class Attribute
     public function toEditor(string $name): array
     {
         if (! $this->is_editable) {
-            return ['type' => $this->type, 'default' => $this->getDefault(), 'editable' => false];
+            return array_filter([
+                'type' => $this->type,
+                'default' => $this->getDefault(),
+                'editable' => false,
+                'options' => $this->type === self::ENUM ? $this->editorOptions() : null,
+            ], fn ($value, $key) => ! is_null($value) || $key === 'default', ARRAY_FILTER_USE_BOTH);
         }
 
         return array_filter([

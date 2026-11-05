@@ -21,12 +21,36 @@
                 "textAlign": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "start",
+                            "label": "Start"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "end",
+                            "label": "End"
+                        }
+                    ]
                 },
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -51,17 +75,67 @@
                 "level": {
                     "type": "enum",
                     "default": 1,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "1"
+                        },
+                        {
+                            "value": "2",
+                            "label": "2"
+                        },
+                        {
+                            "value": "3",
+                            "label": "3"
+                        },
+                        {
+                            "value": "4",
+                            "label": "4"
+                        },
+                        {
+                            "value": "5",
+                            "label": "5"
+                        },
+                        {
+                            "value": "6",
+                            "label": "6"
+                        }
+                    ]
                 },
                 "textAlign": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "start",
+                            "label": "Start"
+                        },
+                        {
+                            "value": "center",
+                            "label": "Center"
+                        },
+                        {
+                            "value": "end",
+                            "label": "End"
+                        }
+                    ]
                 },
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -85,7 +159,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -119,12 +203,44 @@
                 "type": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "1",
+                            "label": "1"
+                        },
+                        {
+                            "value": "a",
+                            "label": "A"
+                        },
+                        {
+                            "value": "A",
+                            "label": "A"
+                        },
+                        {
+                            "value": "i",
+                            "label": "I"
+                        },
+                        {
+                            "value": "I",
+                            "label": "I"
+                        }
+                    ]
                 },
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -159,7 +275,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -211,7 +337,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -263,7 +399,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -310,7 +456,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
@@ -344,7 +500,17 @@
                 "dir": {
                     "type": "enum",
                     "default": null,
-                    "editable": false
+                    "editable": false,
+                    "options": [
+                        {
+                            "value": "ltr",
+                            "label": "Ltr"
+                        },
+                        {
+                            "value": "rtl",
+                            "label": "Rtl"
+                        }
+                    ]
                 }
             }
         },
