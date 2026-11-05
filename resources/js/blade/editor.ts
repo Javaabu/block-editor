@@ -6,10 +6,10 @@
  *     <input type="hidden" name="body" value="{…}">
  *   </div>
  *
- * The hidden input carries the JSON for the form post and is kept in sync.
+ * The hidden input carries the JSON for the form post and is kept in sync. The
+ * stylesheet is its own asset (`block-editor::styles`), which this one depends on.
  * Editors added later (Turbo, modals) mount with `mountBlockEditors(root)`.
  */
-import "../../css/block-editor.css"
 import { createBlockEditor, type BlockEditorInstance } from "../index"
 import type { ContentErrors } from "../types"
 
@@ -35,6 +35,7 @@ export function mountBlockEditor(element: HTMLElement): BlockEditorInstance {
   const { dataset } = element
   const attributes: Record<string, string | undefined> = {
     id: dataset.inputId,
+    "aria-label": dataset.labelledby ? undefined : dataset.label,
     "aria-labelledby": dataset.labelledby,
     "aria-describedby": dataset.describedby,
     "aria-invalid": dataset.invalid === undefined ? undefined : "true",
@@ -46,6 +47,7 @@ export function mountBlockEditor(element: HTMLElement): BlockEditorInstance {
     content: input?.value ?? null,
     editable: dataset.readonly === undefined && dataset.disabled === undefined,
     thaana: dataset.thaana === "false" ? false : undefined,
+    toolbar: dataset.toolbar !== "false",
     errors: readJson<ContentErrors>(dataset.errors),
     errorPrefix: dataset.errorPrefix ?? "",
     attributes,

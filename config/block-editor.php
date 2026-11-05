@@ -144,4 +144,16 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Assets
+    |--------------------------------------------------------------------------
+    |
+    | The editor and content components ask javaabu/manifest for the editor
+    | script and the stylesheet. Turn it off to load them yourself.
+    |
+    */
+
+    'assets' => true,
+
 ];

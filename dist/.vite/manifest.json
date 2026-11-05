@@ -9,12 +9,9 @@
     "isEntry": true
   },
   "resources/js/blade/editor.ts": {
-    "file": "assets/editor-7lfmE5Gc.js",
+    "file": "assets/editor-Cz5P9253.js",
     "name": "editor",
     "src": "resources/js/blade/editor.ts",
-    "isEntry": true,
-    "css": [
-      "assets/block-editor-Xt3SBMuN.css"
-    ]
+    "isEntry": true
   }
 }

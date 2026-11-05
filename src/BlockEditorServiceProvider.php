@@ -2,13 +2,18 @@
 
 namespace Javaabu\BlockEditor;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Javaabu\BlockEditor\Assets\Assets;
 use Javaabu\BlockEditor\Rendering\Renderer;
 use Javaabu\BlockEditor\Sanitizing\HtmlSanitizer;
 use Javaabu\BlockEditor\Sanitizing\Sanitizer;
+use Javaabu\Manifest\Concerns\RegistersAssets;
 
 class BlockEditorServiceProvider extends ServiceProvider
 {
+    use RegistersAssets;
+
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/block-editor.php', 'block-editor');
@@ -17,6 +22,8 @@ class BlockEditorServiceProvider extends ServiceProvider
         $this->app->singleton(HtmlSanitizer::class);
         $this->app->singleton(Sanitizer::class);
         $this->app->singleton(Renderer::class);
+
+        $this->registerAssets(Assets::PACKAGE, __DIR__ . '/../resources', fn ($package) => Assets::register($package));
     }
 
     public function boot(): void
@@ -24,6 +31,8 @@ class BlockEditorServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/../lang', 'block-editor');
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'block-editor');
+
+        Blade::componentNamespace('Javaabu\\BlockEditor\\Views\\Components', 'block-editor');
 
         if (! $this->app->runningInConsole()) {
             return;
