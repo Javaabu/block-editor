@@ -1,5 +1,8 @@
 import * as React from "react"
 
+// The stylesheet, so Vite bundles it with any page that renders this (Inertia pages get no manifest tags).
+import "../block-editor.css"
+
 import { isEmptyDocument, parseContent } from "../editor/content"
 import { defaultConfig } from "../editor/create"
 import { getBlock, type BlockRenderProps, type Translate } from "../registry"

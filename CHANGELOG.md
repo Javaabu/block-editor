@@ -14,4 +14,5 @@ Initial development of v1.0:
 - A framework-free TipTap editor (`createBlockEditor`) with a toolbar, `/` menu, `+` inserter, block handle (drag, move, duplicate, delete), settings panel generated from attributes, links, keyboard shortcuts and server errors on blocks. Reuses Onu's Thaana keyboard, auto direction, callout and embed nodes.
 - Blade: `<x-block-editor::editor>` (a javaabu/forms field) and `<x-block-editor::content>`. React: `BlockEditor`, `BlockEditorField` (@javaabu/forms), `BlockContent` (same markup as Blade). Stencil: `BlockEditorField` and the `block-editor` React type.
 - Phonetic (JTK) Thaana typing and RTL-aware rendering of mixed Dhivehi and English content; English and Dhivehi strings.
-- Assets through javaabu/manifest, with a prebuilt `dist/` for apps without Vite; runnable examples.
+- Assets through javaabu/manifest, with a prebuilt `dist/` for apps without Vite; runnable examples. `@javaabu/forms` is declared for Inertia pages only (`for: 'pages'`), so `manifest:check` doesn't ask Blade apps for it.
+- The React components import the stylesheet, so Inertia pages get it from Vite without importing it by hand.

@@ -71,8 +71,7 @@ return Inertia::render('Posts/Edit', [
 ```
 
 ```tsx
-import { BlockContent, BlockEditorField } from "@javaabu/block-editor/react"
-import "@javaabu/block-editor/block-editor.css"
+import { BlockContent, BlockEditorField } from "@javaabu/block-editor/react"   // they import their CSS
 
 <BlockEditorField name="body" config={editor} required />
 <BlockContent content={post.body} />

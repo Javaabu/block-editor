@@ -1,4 +1,3 @@
-import "@javaabu/block-editor/block-editor.css"
 import { Form, Submit } from "@javaabu/forms"
 import * as React from "react"
 import { createRoot } from "react-dom/client"

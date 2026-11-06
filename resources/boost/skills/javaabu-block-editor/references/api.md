@@ -72,4 +72,5 @@ Marks: bold, italic, underline, strike, code, link (href, target).
 - Embeds: `registerEmbedProvider(name, fn)`, `toEmbedUrl(url)`.
 - Helpers: `attributesFrom`, `dataAttrs`, `defaultAttrs`, `insertDefault`, `insertBlock`, `atomView`, `settingsPrompt`, `currentBlock`, `blockAt`, `moveBlock`, `duplicateBlock`, `deleteBlock`, `parseContent`, `isEmptyDocument`, `isSafeUrl`, `directionOf`, `defaultConfig(locale)`.
 - React: `BlockEditor`, `BlockEditorField`, `StencilBlockEditor`, `BlockContent` (`content`, `html`, `config`, `renderers`, `marks`, `empty`), `CORE_RENDERERS`.
-- Stylesheet: `@javaabu/block-editor/block-editor.css` or the manifest asset `block-editor::styles`.
+- Stylesheet: the manifest asset `block-editor::styles` (Blade components require it), imported by the React components themselves; `@javaabu/block-editor/block-editor.css` for anything else.
+- npm: the assets scope (TipTap, `@javaabu/onu`, React, which Onu's editor module imports) for every Vite app; `@javaabu/forms` is `for: 'pages'`, asked for by `manifest:check` only in Inertia apps.

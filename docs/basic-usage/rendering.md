@@ -66,7 +66,7 @@ A block registered in JS with a `render` component renders with it. A block with
 
 # The stylesheet
 
-The components ask manifest for `block-editor::styles`. In React, import it once:
+The Blade components ask manifest for `block-editor::styles`. The React components (`BlockContent`, `BlockEditor` and the fields) import it themselves, so Vite bundles it with any Inertia page that renders them. To style content you render some other way (HTML from `$post->body->toHtml()` in a component of your own, say), import it yourself:
 
 ```ts
 import "@javaabu/block-editor/block-editor.css"

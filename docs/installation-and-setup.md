@@ -44,6 +44,12 @@ npm install @javaabu/onu @tiptap/core @tiptap/pm @tiptap/starter-kit @tiptap/ext
   @tiptap/static-renderer @tiptap/extension-image @tiptap/extension-placeholder react react-dom
 ```
 
+Blade apps need React too: the editor uses Onu's TipTap extensions, whose module imports it. The React components also need `@javaabu/forms` (javaabu/react-forms). It's declared for Inertia pages only (`for: 'pages'`), so `manifest:check` asks for it only when your `package.json` has an Inertia adapter:
+
+```bash
+npm install github:Javaabu/react-forms#next-gen
+```
+
 Apps without Vite use the prebuilt files in `vendor/javaabu/block-editor/dist`, which manifest serves by itself.
 
 # Inertia React
@@ -52,10 +58,9 @@ With manifest's Vite plugin, import the components:
 
 ```tsx
 import { BlockContent, BlockEditorField } from "@javaabu/block-editor/react"
-import "@javaabu/block-editor/block-editor.css"
 ```
 
-Or load it from your root Blade view with `@manifestStyles('block-editor::styles')`.
+They import the stylesheet themselves, so Vite bundles it with any page that uses them: there's nothing to add for the styles.
 
 Pass the editor config from PHP. It holds the profile's blocks and the translated strings:
 
