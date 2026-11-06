@@ -139,11 +139,10 @@ class NpmDependenciesTest extends TestCase
 
         $this->assertEquals('missing', $rows['@javaabu/forms']['status']);
 
-        // needed_by and scopes are parallel: other packages may need it too
-        $scopes = collect($rows['@javaabu/forms']['needed_by'])
-            ->combine($rows['@javaabu/forms']['scopes'])
-            ->all();
+        $this->assertContains(Assets::PACKAGE, $rows['@javaabu/forms']['needed_by']);
 
-        $this->assertEquals('pages', $scopes[Assets::PACKAGE] ?? null);
+        // Block editor asks for it for pages, not for the assets (other packages may ask for either)
+        $this->assertContains(Assets::PACKAGE, $this->check(['--scope' => ['pages']])['@javaabu/forms']['needed_by']);
+        $this->assertNotContains(Assets::PACKAGE, $this->check(['--scope' => ['assets']])['@javaabu/forms']['needed_by'] ?? []);
     }
 }
